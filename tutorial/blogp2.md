@@ -590,10 +590,10 @@ Create a new container. In this container, you will send your form data.
 
 Now, go back to your logic app. Use the following blocks in the order provided. The blocks have been renamed for documentation purposes. When prompted, search for the block in the menu, and click the appropriate option. More details on what to put inside the blocks will be provided later. 
 
-<p align = "center">
-![Flowchart](https://github.com/11301858/callcenterapp/blob/master/tutorial/p2images/20.png)
-![Flowchart](https://github.com/11301858/callcenterapp/blob/master/tutorial/p2images/21.png)
-![Flowchart](https://github.com/11301858/callcenterapp/blob/master/tutorial/p2images/22.png)
+<p align="center">
+<img src = "https://github.com/11301858/callcenterapp/blob/master/tutorial/p2images/20.png"/>
+<img src = "https://github.com/11301858/callcenterapp/blob/master/tutorial/p2images/21.png"/>
+<img src = "https://github.com/11301858/callcenterapp/blob/master/tutorial/p2images/22.png"
 </p>
  
 We will fill these blocks with code in the next part. 
