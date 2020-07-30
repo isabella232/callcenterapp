@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+
+  <title> BITHERO CALL CENTER </title>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+   <i class="fas fa-bars"></i>
+
+    <H1>BITHERO CALL CENTER</H1>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.css" crossorigin="anonymous">
+
+    <style>
+        html {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        #gallery-note {
+            font-size: smaller
+        }
+
+        .dropzone {
+            border: 3px dashed #00a1f1;
+            background: #F0F8FF;
+            margin: 25px;
+            border-radius: 5px;
+            max-width: 1000px;
+        }
+
+        .dropzone .dz-message {
+            font-weight: 300;
+        }
+
+        .dropzone .dz-message .note {
+            font-family: sans-serif;
+            font-size: 18px;
+            font-weight: 200;
+            display: block;
+            margin-top: 1.5rem;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
+    <form id = "submitMessage" method="post" class = "dropzone">
+          <h4>Enter your call statistics here.</h4>
+        <ul>
+            <li>
+                <label for="blocked">Was this call blocked due to a busy tone?</label>
+                <select id="blocked" name="blocked">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </li>
+            <li>
+                <label for="abandoned">Was this call abandoned by the customer?</label>
+                <select id="abandoned" name="abandoned">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </li>
+            <li>
+                <label for="waitingtime">What was the time (in minutes) the customer spent in the waiting queue?</label>
+                <input type="text" id="waitingtime" name="customer_waitingtime">
+            </li>
+            <li>
+                <label for="problemarea">What was the problem area?</label>
+                <select id="problemarea" name="problemarea">
+                    <option value="Problem 1">Problem 1</option>
+                    <option value="Problem 2">Problem 2</option>
+                    <option value="Problem 3">Problem 3</option>
+                    <option value="Problem 4">Problem 4</option>
+                    <option value="Problem 5">Other</option>
+                </select>
+            </li>
+            <li>
+                <label for="issueresolved">Was the issue resolved?</label>
+                <select id="issueresolved" name="issueresolved">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </li>
+            <li>
+                <label for="resolvetime">How long (in minutes) did it take to solve the problem?</label>
+                <input type="text" id="resolvetime" name="resolve_time">
+            </li>
+            <li>
+                <label for="calltime">How long did the call last?</label>
+                <input type="text" id="calltime" name="calltime">
+            </li>
+            <li>
+                <label for="aftercallwork">How much time was spent on after-call work?</label>
+                <input type="text" id="aftercallwork" name="aftercallwork">
+            </li>
+            <!--  <li class="button">
+                <button type="submit">Continue to the next portion.</button>
+            </li>-->
+        </ul>
+    <h4>Enter your identification info here.</h4>
+        <ul>
+            <div class="container">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="Name">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="country">Call Center</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="country" name="country">
+                            <option value="1">CallCenter 1</option>
+                            <option value="2">CallCenter 2</option>
+                            <option value="3">CallCenter 3</option>
+                            <option value="4">CallCenter 4</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="subject">Comment</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="subject" name="Comment" placeholder="Write something.." style="height:200px"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Submit Identifier Info and Call Statistics.">
+                </div>
+                </div>
+                </ul>
+    </form>
+    <h5>© Shreyan 2020 </h5>
+  <script>
+  submitMessage.onsubmit = async (e) => {
+    e.preventDefault();
+
+    let response = await fetch('<Your link>', {
+      method: 'POST',
+      body: new FormData(submitMessage)
+    });
+
+    let result = await response.json();
+
+    alert(result.message);
+  };
+
+</script>
+</body>
+
+</html>
