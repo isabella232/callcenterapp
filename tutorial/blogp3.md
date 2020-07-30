@@ -100,8 +100,6 @@ Go to your blob. You can manually upload some json files that are in line with t
 #define FILES 50
 #define SIZE sizeof(int) + 1
 
-void *choice(void *, int);
-static char * choice2( char [][25], int);
 int choice3 (int);
 
 int main() {
